@@ -13,3 +13,6 @@ mybtn.addEventListener("click", () => {
     title.innerText = `نام شما یافت نشد دوباره تلاش کنید.`;
   }
 });
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // جلوگیری از رفرش شدن
+});
