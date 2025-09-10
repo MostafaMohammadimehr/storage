@@ -1,0 +1,118 @@
+@font-face {
+    font-family: aviny;
+    src: url("/support/fonts/aviny.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aviny, sans-serif;
+}
+
+body {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+}
+
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#title {
+    font-size: 120px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+}
+
+/* حرکت نرم متن */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* درخشش ملایم متن */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 15px #ff416c;
+    }
+
+    to {
+        text-shadow: 0 0 25px #ff4b2b;
+    }
+}
+#input {
+    font-size: 28px;
+    width: 420px;
+    height: 70px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+}
+
+#mybtn {
+    width: 420px;
+    height: 70px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s linear;
+}
+
+#mybtn:hover {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    transform: scale(01.05);
+    box-shadow: 0 10px 25px rgba(255, 65, 108, 0.5);
+    transform: rotate(2deg);
+    width: 423px;
+    height: 73px;
+}
