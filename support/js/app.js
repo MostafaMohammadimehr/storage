@@ -1,21 +1,49 @@
-const input = document.getElementById("input");
-const form = document.querySelector("form");
-const submit = document.getElementById("mybtn");
-const removename = document.getElementById("removename");
-const title = document.getElementById("title");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-submit.addEventListener("click", () => {
-  sessionStorage.setItem("name", input.value);
-  if (input.value) {
-    let firstname = sessionStorage.getItem("name");
-    title.innerText = `خوش آمدید آقا ${firstname}`;
-  } else {
-    title.innerText = `نام شما یافت نشد دوباره تلاش کنید.`;
-  }
-});
-removename.addEventListener("click", () => {
-  sessionStorage.removeItem("name");
-  title.innerText = `لطفا اسم خود را وارد کنید :`;
+const mybtn = document.getElementById("mybtn");
+mybtn.addEventListener("click", () => {
+  const myObject = {
+    firstname: "mostafa",
+    lastname: "mohammadi",
+    age: "14",
+    ismale: true,
+  };
+  const myarray = [
+    {
+      firstname: "ali",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+    {
+      firstname: "mammad",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+    {
+      firstname: "ahmad",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+    {
+      firstname: "akbar",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+    {
+      firstname: "mostafa",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+    {
+      firstname: "asghar",
+      lastname: "mohammadi",
+      age: "14",
+      ismale: true,
+    },
+  ];
+  localStorage.setItem("Person info array", JSON.stringify(myarray));
+  localStorage.setItem("Person info object", JSON.stringify(myObject));
 });
