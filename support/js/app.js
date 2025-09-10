@@ -1,18 +1,21 @@
+const input = document.getElementById("input");
+const form = document.querySelector("form");
+const submit = document.getElementById("mybtn");
+const removename = document.getElementById("removename");
 const title = document.getElementById("title");
-const mybtn = document.getElementById("mybtn");
-let input = document.getElementById("input");
-
-mybtn.addEventListener("click", () => {
-  let inputvalue = input.value.trim();
-  localStorage.setItem("firstname", inputvalue);
-  let firstname = localStorage.getItem("firstname");
-
-  if (inputvalue) {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+submit.addEventListener("click", () => {
+  sessionStorage.setItem("name", input.value);
+  if (input.value) {
+    let firstname = sessionStorage.getItem("name");
     title.innerText = `خوش آمدید آقا ${firstname}`;
   } else {
     title.innerText = `نام شما یافت نشد دوباره تلاش کنید.`;
   }
 });
-document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault(); // جلوگیری از رفرش شدن
+removename.addEventListener("click", () => {
+  sessionStorage.removeItem("name");
+  title.innerText = `لطفا اسم خود را وارد کنید :`;
 });
